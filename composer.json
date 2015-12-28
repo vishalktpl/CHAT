@@ -1,8 +1,27 @@
 {
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://github.com/vishalktpl/CHAT"
-        }
-    ]
+    "name": "ktpl/hello",
+    "description": "N/A",
+    "require": {
+     "php": "~5.5.0|~5.6.0",
+      "magento/module-store": "1.0.0-beta",
+      "magento/module-theme": "1.0.0-beta",
+      "magento/module-widget": "1.0.0-beta",
+      "magento/module-backend": "1.0.0-beta",
+      "magento/module-catalog": "1.0.0-beta",
+      "magento/module-email": "1.0.0-beta",
+      "magento/module-ui": "1.0.0-beta",
+      "magento/module-variable": "1.0.0-beta",
+      "magento/module-media-storage": "1.0.0-beta",
+      "magento/framework": "1.0.0-beta",
+      "magento/magento-composer-installer": "*"        
+    },
+    "type": "magento2-component",
+    "extra": {
+        "map": [
+            [
+                "*",
+                "dev/tools/Magento/Tools/Migration"
+            ]
+        ]
+    }
 }
