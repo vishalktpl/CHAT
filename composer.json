@@ -1,6 +1,6 @@
 {
-  "name": "dys/zopimlivechat",
-  "description": "A Magento 2 module that enable zopimchat",
+  "name": "dys/test",
+  "description": "A Magento 2 module",
   "type": "magento2-module",
   "version": "1.0.0",
   "license": [
@@ -14,7 +14,7 @@
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "Dys\\Zopimlivechat\\": ""
+      "Dys\\Test\\": ""
     }
   }
 }
