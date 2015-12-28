@@ -24,10 +24,10 @@
             ]
         ]
     },
-      "repositories": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/vishalktpl/CHAT.git"
-        }
-      ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/vishalktpl/CHAT.git"
+    }
+  ]
 }
