@@ -16,19 +16,11 @@
       "magento/magento-composer-installer": "*"        
     },
     "version": "1.0.0-dev",
-    "type": "magento2-component",
-    "extra": {
-        "map": [
-            [
-                "*",
-                "dev/tools/Magento/Tools/Migration"
-            ]
-        ]
-    },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/vishalktpl/CHAT.git"
-    }
-  ]
+    "type": "magento2-module",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://github.com/vishalktpl/CHAT"
+        }
+    ]
 }
