@@ -1,0 +1,18 @@
+{
+  "name": "dys/test",
+  "description": "A Magento 2 module",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license":["MIT"],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/magento-composer-installer": "*",
+    "dys/test":"~1.0.0"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Dys\\Test\\": ""
+    }
+  }
+}
