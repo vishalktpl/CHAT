@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Ktpl_Hello::ktpl" title="Ktpl" module="Ktpl_Hello" sortOrder="100" resource="Ktpl_Hello::hello"/>
+        <add id="Ktpl_Hello::hello" title="Ktpl hello" module="Ktpl_Hello" sortOrder="1" parent="Ktpl_Hello::ktpl" action="hello/hello" resource="Ktpl_Hello::hello"/>
+    </menu>
+</config>
