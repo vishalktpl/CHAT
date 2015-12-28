@@ -23,5 +23,11 @@
                 "dev/tools/Magento/Tools/Migration"
             ]
         ]
-    }
+    },
+      "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/vishalktpl/CHAT.git"
+        }
+      ],
 }
