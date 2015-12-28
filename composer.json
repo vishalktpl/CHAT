@@ -15,6 +15,7 @@
       "magento/framework": "1.0.0-beta",
       "magento/magento-composer-installer": "*"        
     },
+    "version": "1.0.0-dev",
     "type": "magento2-component",
     "extra": {
         "map": [
