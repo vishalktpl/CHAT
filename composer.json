@@ -6,8 +6,7 @@
   "license":["MIT"],
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0",
-    "magento/magento-composer-installer": "*",
-    "dys/test":"~1.0.0"
+    "magento/magento-composer-installer": "*"
   },
   "autoload": {
     "files": [ "registration.php" ],
