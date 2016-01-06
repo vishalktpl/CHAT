@@ -1,0 +1,85 @@
+<?php
+    $collection = $block->getBestSellerData();
+   
+    $image = 'cart_cross_sell_products';  
+    $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+    $repeatArray = array();
+    //echo '<pre>';
+    ?>
+<h2>Best seller Products</h2>
+<div class="jcarousel-wrapper">
+<div id="slider" class="jcarousel" data-jcarousel="true">
+    <ul>
+        <?php  foreach($collection as $k=>$_item){
+
+                    $productId = $_item['product_id'];
+                    $_product =  $block->getProductData($productId);
+                    foreach ($_product as $product) {
+                        //print_R($value->getData());
+                        $productId = $product->getId();
+                        $productImage = $_imagehelper->init($product, $image)->constrainOnly(FALSE)->
+                                        keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(400)->getUrl();
+                        
+                        if(array_search($productId, $repeatArray)){
+                            //remove second time same product id for config product....
+                            continue;
+                        }
+
+                        $repeatArray[$k+1] = $productId;
+                        ?>
+                         <li><a href="<?php echo $product->getProductUrl(); ?>"><img src="<?php echo $productImage; ?>" width="110" height="160"?><?php echo $product->getName()?></a></li>
+                    <?php   }   ?>           
+        <?php  } //main end foreach ?>
+    </ul>
+
+</div>
+<a class="jcarousel-control-prev" href="#" data-jcarouselcontrol="true">‹</a>
+<a class="jcarousel-control-next" href="#" data-jcarouselcontrol="true">›</a>
+</div>
+
+
+<form method="POST" action="<?php echo $this->getUrl('team/index/post'); ?>" data-hasrequired="<?php echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}' enctype="multipart/form-data"> 
+
+
+<fieldset class="fieldset">
+        
+        <div class="field name required">
+            <label class="label" for="title"><span><?php echo __('Team Name') ?></span></label>
+            <div class="control">
+                <input name="title" id="title" title="<?php echo __('Team Name') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="content"><span><?php echo __('Team Content') ?></span></label>
+            <div class="control">
+                <textarea rows="4" cols="50" data-validate="{required:true}" rows="4" cols="50" name="content" id="content" title="<?php echo __('Team Content') ?>"></textarea>
+                
+            </div>
+        </div>
+
+        <div class="field status required">
+            <label class="label" for="status"><span><?php echo __('Team Status') ?></span></label>
+            <div class="control">
+                <select class="select" id="is_active" name="is_active" aria-required="true">
+                    <option value="1">Active</option>
+                    <option value="2" selected="selected">Inactive</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field status required">
+            <label class="label" for="team_image"><span><?php echo __('Image') ?></span></label>
+            <div class="control">
+                <input type="file" name="team_image" id="team_image" class="product-custom-option required"/>
+            </div>
+        </div>
+
+        <div class="actions-toolbar">
+	        <div class="primary">
+	            <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary">
+	                <span><?php echo __('Submit') ?></span>
+	            </button>
+	        </div>
+    	</div>
+</fieldset>
+</form>

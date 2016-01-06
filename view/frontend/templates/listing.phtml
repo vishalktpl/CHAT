@@ -1,0 +1,48 @@
+<?php
+$banners = $this->getCollection();
+?>
+<script>
+    require(['jquery', 'Dys_Team/js/jquery.flexslider', 'Dys_Team/js/banner']);
+</script>
+<?php 
+$_teamrecords = $this->getCollection(); 
+if($_teamrecords && count($_teamrecords))
+{
+?>
+<table>
+    <thead>
+        <tr>
+            <th scope="col" class="col id"><?php echo __('ID #') ?></th>
+            <th scope="col" class="col title"><?php echo __('Team Name') ?></th>
+            <th scope="col" class="col content"><?php echo __('Team Content') ?></th>
+            <th scope="col" class="col ">&nbsp;</th>
+        </tr>
+    </thead>
+	<?php
+		foreach ($_teamrecords as $team) 
+		{
+	?>
+		<tr>
+			<td><?php echo $team->getData('team_id'); ?></td>
+			<td><?php echo $team->getData('title'); ?></td>
+			<td><?php echo $team->getData('content'); ?></td>
+			<td><img height="50" width="50" src="<?php echo $block->getBaseUrl().'pub/media/'.$team->getData('team_image'); ?>"></td>
+		</tr>
+	<?php
+		}
+}
+?>
+</table>
+<?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+
+<div class="flexslider">
+    <ul class="slides">
+        <?php foreach ($banners as $team): ?>
+            <li  data-thumb="<?php echo $block->getBaseUrl().'pub/media/'.$team->getData('team_image'); ?>">
+                <a href="" target="" onclick="" style="display:block"><img alt="" src="<?php echo $block->getBaseUrl().'pub/media/'.$team->getData('team_image'); ?>" height="800" /></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
